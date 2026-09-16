@@ -1,4 +1,4 @@
-package com.example.shopifieshop.ui.theme
+package com.example.shopifieshop.utils.theme
 
 import androidx.compose.ui.graphics.Color
 
