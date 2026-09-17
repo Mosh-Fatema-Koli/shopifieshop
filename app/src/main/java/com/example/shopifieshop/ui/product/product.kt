@@ -107,13 +107,6 @@ fun ProductScreen(navController: NavController) {
 
 @Composable
 fun ProductHeader() {
-
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-
         Column {
 
             Text(
@@ -134,7 +127,7 @@ fun ProductHeader() {
         }
 
     }
-}
+
 
 @Composable
 fun SearchBar() {
