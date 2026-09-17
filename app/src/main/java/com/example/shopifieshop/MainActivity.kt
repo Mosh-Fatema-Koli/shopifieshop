@@ -10,9 +10,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.example.shopifieshop.ui.splash.SplashScreen
-import com.example.studentcrud.ui.screens.ProductScreen
+import com.example.shopifieshop.ui.AppNav.ProductApp
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.time.delay
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +35,7 @@ class MainActivity : ComponentActivity() {
 
             } else {
 
-                ProductScreen()
+                ProductApp()
             }
         }
     }

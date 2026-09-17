@@ -43,6 +43,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.shopifieshop.ui.AppNav.ProductBottomBar
+import androidx.navigation.NavController
 
 data class ProductUi(
     val id: Int,
@@ -52,7 +54,7 @@ data class ProductUi(
 )
 
 @Composable
-fun ProductScreen() {
+fun ProductScreen(navController: NavController) {
 
     val products = remember {
         listOf(
@@ -66,9 +68,7 @@ fun ProductScreen() {
     }
 
     Scaffold(
-        bottomBar = {
-            ProductBottomBar()
-        }
+        bottomBar = { ProductBottomBar(navController)}
     ) { paddingValues ->
 
         LazyColumn(
@@ -133,16 +133,6 @@ fun ProductHeader() {
             )
         }
 
-        IconButton(
-            onClick = {}
-        ) {
-
-            Icon(
-                imageVector = Icons.Default.ShoppingCart,
-                contentDescription = "Cart",
-                modifier = Modifier.size(28.dp)
-            )
-        }
     }
 }
 
@@ -389,54 +379,5 @@ fun ProductCard(
                 }
             }
         }
-    }
-}
-
-@Composable
-fun ProductBottomBar() {
-
-    NavigationBar {
-
-        NavigationBarItem(
-            selected = true,
-            onClick = {},
-            icon = {
-                Icon(
-                    Icons.Default.Search,
-                    contentDescription = "Home"
-                )
-            },
-            label = {
-                Text("Home")
-            }
-        )
-
-        NavigationBarItem(
-            selected = false,
-            onClick = {},
-            icon = {
-                Icon(
-                    Icons.Default.ShoppingCart,
-                    contentDescription = "Cart"
-                )
-            },
-            label = {
-                Text("Cart")
-            }
-        )
-
-        NavigationBarItem(
-            selected = false,
-            onClick = {},
-            icon = {
-                Icon(
-                    Icons.Default.FavoriteBorder,
-                    contentDescription = "Favorites"
-                )
-            },
-            label = {
-                Text("Favorites")
-            }
-        )
     }
 }
